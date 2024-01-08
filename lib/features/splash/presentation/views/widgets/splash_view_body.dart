@@ -1,6 +1,6 @@
 import 'package:books_app/constants.dart';
 import 'package:books_app/core/utils/assets.dart';
-import 'package:books_app/features/home/presentaion/views/home_view.dart';
+import 'package:books_app/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
