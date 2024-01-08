@@ -1,7 +1,9 @@
+import 'package:books_app/constants.dart';
 import 'package:books_app/core/utils/assets.dart';
+import 'package:books_app/features/home/presentaion/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:get/get.dart';
 import 'sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -13,14 +15,30 @@ class SplashViewBody extends StatefulWidget {
 
 class _SplashViewBodyState extends State<SplashViewBody>
     with SingleTickerProviderStateMixin {
-
   late AnimationController animationController;
   late Animation<Offset> slidingAnimation;
 
   @override
   void initState() {
     super.initState();
+    initSlidingAnimation();
+    navigateToHome();
+  }
 
+  void navigateToHome() {
+    Future.delayed(
+        const Duration(
+          seconds: 2,
+        ), () {
+      Get.to(
+        () => const HomeView(),
+        transition: Transition.fade,
+        duration: transitionDuration,
+      );
+    });
+  }
+
+  void initSlidingAnimation() {
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(
@@ -62,4 +80,3 @@ class _SplashViewBodyState extends State<SplashViewBody>
     animationController.dispose();
   }
 }
-
