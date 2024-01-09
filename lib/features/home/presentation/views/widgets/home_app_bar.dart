@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/assets.dart';
 
@@ -10,10 +11,7 @@ class HomeAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.only(
-          top: 40.h,
-          bottom: 20.h
-      ),
+      padding: EdgeInsetsDirectional.only(top: 40.h, bottom: 20.h),
       child: Row(
         children: [
           Image.asset(
@@ -22,7 +20,11 @@ class HomeAppBar extends StatelessWidget {
           ),
           const Spacer(),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(
+                "/searchView",
+              );
+            },
             icon: Icon(
               FontAwesomeIcons.magnifyingGlass,
               size: 24.r,
