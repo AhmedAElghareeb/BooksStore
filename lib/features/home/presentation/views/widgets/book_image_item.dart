@@ -3,13 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/utils/assets.dart';
 
-class HListViewItem extends StatelessWidget {
-  const HListViewItem({super.key});
+class BookImageItem extends StatelessWidget {
+  const BookImageItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 2.7 / 4,
+      aspectRatio: 2.6 / 4,
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadiusDirectional.circular(14.r),
