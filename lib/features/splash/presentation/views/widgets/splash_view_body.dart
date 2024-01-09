@@ -1,9 +1,7 @@
-import 'package:books_app/constants.dart';
 import 'package:books_app/core/utils/assets.dart';
-import 'package:books_app/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -30,10 +28,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
         const Duration(
           seconds: 2,
         ), () {
-      Get.to(
-        () => const HomeView(),
-        transition: Transition.fade,
-        duration: transitionDuration,
+      GoRouter.of(context).push(
+        "/homeView",
       );
     });
   }
